@@ -34,4 +34,3 @@ jobs:
         multi_binaries: true
         project_path: ./cmd/interactsh-server
         ldflags: "-s -w"
-        executable_compression: "upx -9"

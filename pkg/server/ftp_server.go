@@ -44,7 +44,7 @@ func NewFTPServer(options *Options) (*FTPServer, error) {
 	nopDriver := NewNopDriver(driver)
 
 	opt := &ftpserver.Options{
-		Name:   "interactsh-ftp",
+		Name:   "ftp",
 		Driver: nopDriver,
 		Port:   options.FtpPort,
 		Perm:   ftpserver.NewSimplePerm("root", "root"),
@@ -63,7 +63,7 @@ func NewFTPServer(options *Options) (*FTPServer, error) {
 	if options.CertificatePath != "" && options.PrivateKeyPath != "" || len(options.CertFiles) > 0 {
 		// attempt to retrieve certificates for the first domain automatically
 		optsTls := &ftpserver.Options{
-			Name:   "interactsh-ftp",
+			Name:   "ftp",
 			Driver: nopDriver,
 			Port:   options.FtpsPort,
 			Perm:   ftpserver.NewSimplePerm("root", "root"),

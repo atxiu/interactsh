@@ -31,5 +31,7 @@ jobs:
         goarch: ${{ matrix.goarch }}
         goversion: "https://go.dev/dl/go1.23.0.linux-amd64.tar.gz"
         binary_name: "interactsh"
+        multi_binaries: true
+        project_path: ./cmd/interactsh-server
         ldflags: "-s -w"
         executable_compression: "upx -9"

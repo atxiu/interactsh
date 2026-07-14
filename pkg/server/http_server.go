@@ -229,11 +229,9 @@ func (h *HTTPServer) handleInteraction(r *http.Request, uniqueID, fullID, reqStr
 	}
 }
 
-const banner = `<h1> Interactsh Server </h1>
+const banner = `<h1> Server </h1>
 
-<a href='https://github.com/projectdiscovery/interactsh'><b>Interactsh</b></a> is an open-source tool for detecting out-of-band interactions. It is a tool designed to detect vulnerabilities that cause external interactions.<br><br>
 
-If you notice any interactions from <b>*.%s</b> in your logs, it's possible that someone (internal security engineers, pen-testers, bug-bounty hunters) has been testing your application.<br><br>
 
 You should investigate the sites where these interactions were generated from, and if a vulnerability exists, examine the root cause and take the necessary steps to mitigate the issue.
 `
@@ -268,7 +266,7 @@ func (h *HTTPServer) defaultHandler(w http.ResponseWriter, req *http.Request) {
 	domain := extractServerDomain(h, req)
 	w.Header().Set("Server", domain)
 	if !h.options.NoVersionHeader {
-		w.Header().Set("X-Interactsh-Version", h.options.Version)
+		w.Header().Set("X-Version", h.options.Version)
 	}
 
 	reflection := h.options.URLReflection(req.Host)

@@ -36,7 +36,7 @@ func NewSMTPServer(options *Options) (*SMTPServer, error) {
 		AuthHandler: authHandler,
 		HandlerRcpt: rcptHandler,
 		Hostname:    options.Domains[0],
-		Appname:     "interactsh",
+		Appname:     "bing",
 		Handler:     smtpd.Handler(server.defaultHandler),
 	}
 	server.smtpsServer = smtpd.Server{
@@ -44,7 +44,7 @@ func NewSMTPServer(options *Options) (*SMTPServer, error) {
 		AuthHandler: authHandler,
 		HandlerRcpt: rcptHandler,
 		Hostname:    options.Domains[0],
-		Appname:     "interactsh",
+		Appname:     "bing",
 		Handler:     smtpd.Handler(server.defaultHandler),
 	}
 	return server, nil

@@ -104,8 +104,8 @@ func (ldapServer *LDAPServer) handleSearch(w ldap.ResponseWriter, m *ldap.Messag
 	message.WriteString(fmt.Sprintf("Attributes=%s\n", r.Attributes()))
 	message.WriteString(fmt.Sprintf("TimeLimit=%d\n", r.TimeLimit().Int()))
 
-	e := ldap.NewSearchResultEntry("cn=interactsh, " + string(baseObject))
-	e.AddAttribute("mail", "interact@s.h", "interact@s.h")
+	e := ldap.NewSearchResultEntry("cn=bing, " + string(baseObject))
+	e.AddAttribute("mail", "bing@s.h", "bing@s.h")
 	e.AddAttribute("company", "aaa")
 	e.AddAttribute("department", "bbbb")
 	e.AddAttribute("l", "cccc")
